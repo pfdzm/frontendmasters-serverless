@@ -2,7 +2,7 @@ const { URL } = require("url");
 const fetch = require("node-fetch");
 const movies = require("../data/movies.json");
 
-require("dotenv").config();
+// require("dotenv").config();
 
 exports.handler = async () => {
   const api = new URL("https://www.omdbapi.com/");
@@ -29,6 +29,6 @@ exports.handler = async () => {
 
   return {
     statusCode: 200,
-    body: JSON.stringify(movies),
+    body: JSON.stringify(moviesWithRatings),
   };
 };
